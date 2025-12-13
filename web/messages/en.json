@@ -42,6 +42,23 @@
     "quote": "\"Not clearing memory, but recycling inspiration.\"",
     "overviewTitle": "0x00. Overview",
     "overviewText": "HZZ-GC is the exclusive project for the HZZ group. We are a collective of tech enthusiasts, engineers, CEOs, and product managers who have transitioned from \"young tech lovers\" to the \"middle-aged tech backbone\".",
+    "conceptsTitle": "0x01. Core Concepts",
+    "conceptsIntro": "This project strictly adopts the Garbage Collection metaphor:",
+    "conceptGarbageTitle": "Garbage (Object)",
+    "conceptGarbageDesc": "Any tool, script, demo, or prompt created by a group member.",
+    "conceptGarbageCriteria": "Criteria: As long as it runs once, or makes the author happy for 5 minutes, it is valid Garbage.",
+    "conceptHeapTitle": "Heap",
+    "conceptHeapDesc": "The central area where all Garbage is allocated and displayed.",
+    "conceptGCTitle": "GC (Collection)",
+    "conceptGCDesc": "Minor GC (Daily), Major GC (Weekly).",
+    "conceptReachabilityTitle": "Reachability",
+    "conceptReachabilityReachable": "Reachable: Active, liked, or used Garbage.",
+    "conceptReachabilityUnreachable": "Unreachable: Forgotten items (kept for nostalgia).",
+    "phasesTitle": "0x02. Phases",
+    "phase1Title": "Phase 1: Minor GC",
+    "phase1Desc": "Visualization & Allocation.",
+    "phase2Title": "Phase 2: Major GC",
+    "phase2Desc": "Deduplication & Search.",
     "enterHeap": "Enter the Heap"
   }
 }
