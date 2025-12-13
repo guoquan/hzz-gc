@@ -1,0 +1,46 @@
+{
+  "HomePage": {
+    "title": "HZZ-GC",
+    "heapSize": "HEAP_SIZE",
+    "totalObjects": "TOTAL_OBJECTS",
+    "edenSpace": "EDEN_SPACE",
+    "welcome": "Welcome to the Junkyard",
+    "slogan": "Not clearing memory, but recycling inspiration.",
+    "systemOut": "System.out.println(\"Please deposit your garbage by 12:00 PM.\");",
+    "submit": "Dump It Here",
+    "manifesto": "View Manifesto",
+    "searchPlaceholder": "Search heap...",
+    "noResults": "// No objects found matching criteria.",
+    "footerRuntime": "HZZ-GC Runtime Environment v1.0.0",
+    "footerDev": "Developed by HZZ Garbage Collector Agent"
+  },
+  "Filters": {
+    "all": "All Objects",
+    "new": "Eden Space",
+    "tenured": "Old Gen"
+  },
+  "Card": {
+    "status": {
+      "NEW": "🌱 Eden Space",
+      "SURVIVOR": "🛡️ Survivor",
+      "TENURED": "🏆 Old Gen",
+      "UNREACHABLE": "☠️ Unreachable"
+    },
+    "addr": "Addr",
+    "repo": "Repo",
+    "demo": "Demo",
+    "visit": "Visit",
+    "docs": "Docs",
+    "download": "Download",
+    "refs": "Refs"
+  },
+  "Manifesto": {
+    "back": "Return to Heap",
+    "title": "HZZ-GC",
+    "subtitle": "HZZ Garbage Collection (from Group Chat)",
+    "quote": "\"Not clearing memory, but recycling inspiration.\"",
+    "overviewTitle": "0x00. Overview",
+    "overviewText": "HZZ-GC is the exclusive project for the HZZ group. We are a collective of tech enthusiasts, engineers, CEOs, and product managers who have transitioned from \"young tech lovers\" to the \"middle-aged tech backbone\".",
+    "enterHeap": "Enter the Heap"
+  }
+}

@@ -1,0 +1,11 @@
+services:
+  web:
+    build: 
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: hzz-gc-web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production

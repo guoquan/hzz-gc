@@ -1,0 +1,46 @@
+{
+  "HomePage": {
+    "title": "HZZ-GC",
+    "heapSize": "堆大小",
+    "totalObjects": "对象总数",
+    "edenSpace": "新生代",
+    "welcome": "欢迎来到垃圾回收站",
+    "slogan": "不是清理内存，是回收灵感。",
+    "systemOut": "System.out.println(\"各位昨天的小垃圾请与今天中午12点之前发出来.\");",
+    "submit": "往这儿扔",
+    "manifesto": "查看宣言",
+    "searchPlaceholder": "搜索堆内存...",
+    "noResults": "// 未找到匹配对象。",
+    "footerRuntime": "HZZ-GC 运行环境 v1.0.0",
+    "footerDev": "由 HZZ Garbage Collector Agent 开发"
+  },
+  "Filters": {
+    "all": "所有对象",
+    "new": "新生代 (Eden)",
+    "tenured": "老年代 (Old Gen)"
+  },
+  "Card": {
+    "status": {
+      "NEW": "🌱 新生代",
+      "SURVIVOR": "🛡️ 幸存区",
+      "TENURED": "🏆 老年代",
+      "UNREACHABLE": "☠️ 不可达"
+    },
+    "addr": "内存地址",
+    "repo": "仓库",
+    "demo": "演示",
+    "visit": "访问",
+    "docs": "文档",
+    "download": "下载",
+    "refs": "引用"
+  },
+  "Manifesto": {
+    "back": "返回堆空间",
+    "title": "HZZ-GC",
+    "subtitle": "HZZ 垃圾回收系统 (From Group Chat)",
+    "quote": "\"不是清理内存，是回收灵感。\"",
+    "overviewTitle": "0x00. 概览",
+    "overviewText": "HZZ-GC 是 HZZ 群的专属项目。我们是一个由技术爱好者、工程师、CEO 和产品经理组成的\"中年技术中坚\"群体。",
+    "enterHeap": "进入堆空间"
+  }
+}
