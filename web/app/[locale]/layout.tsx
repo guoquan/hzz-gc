@@ -14,6 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export function generateStaticParams() {
+  return [{locale: 'en'}, {locale: 'zh'}];
+}
+
 export const metadata: Metadata = {
   title: "HZZ-GC | The Junkyard",
   description: "Not clearing memory, but recycling inspiration. HZZ Garbage Collection system.",
