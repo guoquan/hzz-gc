@@ -19,6 +19,7 @@ function parseIssueBody(body) {
     if (keyLine.includes('Repository')) data.repo = value;
     if (keyLine.includes('Demo')) data.demo = value;
     if (keyLine.includes('Tags')) data.tags = value;
+    if (keyLine.includes('Prompt')) data.prompt = value;
   });
 
   // Validate
@@ -81,6 +82,7 @@ async function run() {
         demo: parsed.demo === '_No response_' ? undefined : parsed.demo,
       },
       tags: parsed.tags ? parsed.tags.split(',').map(t => t.trim()).filter(Boolean) : ['community'],
+      prompt: parsed.prompt === '_No response_' ? undefined : parsed.prompt,
       created_at: issue.created_at, // Use issue creation time
       updated_at: new Date().toISOString(),
       reference_count: 1, // New items start with 1 ref
@@ -110,6 +112,7 @@ async function run() {
       ${item.links.demo ? `demo: '${item.links.demo}',` : ''}
     },
     tags: ${JSON.stringify(item.tags)},
+    prompt: ${item.prompt ? JSON.stringify(item.prompt) : 'undefined'},
     created_at: '${item.created_at}',
     updated_at: '${item.updated_at}',
     reference_count: ${item.reference_count},

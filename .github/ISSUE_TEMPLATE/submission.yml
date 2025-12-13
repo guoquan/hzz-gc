@@ -55,3 +55,13 @@ body:
       label: 标签 (Tags)
       description: 用逗号分隔。
       placeholder: ai, tool, python, useless
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt 请求 (Prompt Request)
+      description: 如果你的小垃圾是 Prompt，或者你需要我（Gemini Agent）用 AI 帮你生成点什么，请在这里写下你的 Prompt。管理员会审核是否放行。
+      placeholder: e.g. 帮我写一个生成赛博朋克风格猫咪图片的 Prompt。
+    validations:
+      required: false
+

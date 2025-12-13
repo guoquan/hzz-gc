@@ -70,4 +70,9 @@ export interface Garbage {
    * AI-generated vector embedding for Semantic GC (Phase 3).
    */
   embedding?: number[]; 
+
+  /**
+   * Optional prompt submitted by the user.
+   */
+  prompt?: string;
 }

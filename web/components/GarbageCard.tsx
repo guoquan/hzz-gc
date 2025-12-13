@@ -35,6 +35,13 @@ export const GarbageCard: React.FC<GarbageCardProps> = ({ item }) => {
       
       <p className="text-gray-700 text-sm mb-4 flex-grow">{item.description}</p>
       
+      {item.prompt && (
+        <div className="mb-4 bg-gray-50 p-2 rounded text-xs font-mono text-gray-600 border border-gray-200 overflow-hidden">
+          <span className="font-bold text-gray-500 mb-1 block">✨ {t('prompt')}:</span>
+          <p className="whitespace-pre-wrap break-words">{item.prompt}</p>
+        </div>
+      )}
+
       <div className="flex flex-wrap gap-2 mb-4">
         {item.tags.map(tag => (
           <span key={tag} className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">
