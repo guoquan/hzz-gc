@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 
+export function generateStaticParams() {
+  return [{locale: 'en'}, {locale: 'zh'}];
+}
+
 export default async function Manifesto({params}: {params: Promise<{locale: string}>}) {
   const { locale } = await params;
   const t = await getTranslations({locale, namespace: 'Manifesto'});
