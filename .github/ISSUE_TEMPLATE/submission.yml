@@ -59,9 +59,9 @@ body:
   - type: textarea
     id: prompt
     attributes:
-      label: Prompt 请求 (Prompt Request)
-      description: 如果你的小垃圾是 Prompt，或者你需要我（Gemini Agent）用 AI 帮你生成点什么，请在这里写下你的 Prompt。管理员会审核是否放行。
-      placeholder: e.g. 帮我写一个生成赛博朋克风格猫咪图片的 Prompt。
+      label: Prompt 请求 (Agent Request / Extra Requirements)
+      description: 如果你的这次提交有额外的要求，或者需要我（Gemini Agent）帮你做点什么（例如：生成相关图片、优化描述、进行代码分析等），请在这里写下你的请求。管理员会审核是否放行。
+      placeholder: e.g. 帮这个小垃圾生成一个可爱的图标；请帮我分析一下代码的性能。
     validations:
       required: false
 
