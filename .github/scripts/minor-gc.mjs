@@ -137,7 +137,11 @@ async function run() {
   // Export issue numbers for the workflow to use (to close them later)
   // We'll write to GITHUB_OUTPUT
   if (process.env.GITHUB_OUTPUT) {
-    fs.appendFileSync(process.env.GITHUB_OUTPUT, `processed_issues=${processedIssueNumbers.join(',')}\n`);
+    const closesString = processedIssueNumbers.map(n => `Closes #${n}`).join(', ');
+    const reportDate = new Date().toISOString().split('T')[0];
+
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `closes_string=${closesString}\n`);
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, `report_date=${reportDate}\n`);
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `has_changes=true\n`);
   }
 }

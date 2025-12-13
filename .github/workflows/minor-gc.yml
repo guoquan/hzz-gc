@@ -35,12 +35,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: minor gc collection [skip ci]"
-          title: "🧹 Minor GC Report: ${{(new Date()).toISOString().split('T')[0]}}"
+          title: "🧹 Minor GC Report: ${{ steps.collector.outputs.report_date }}"
           body: |
             Daily Garbage Collection Report.
             
             Collected the following issues:
-            Closes #${{ join(split(steps.collector.outputs.processed_issues, ','), ', Closes #') }}
+            ${{ steps.collector.outputs.closes_string }}
             
             Please review the new garbage and merge if acceptable.
           branch: "minor-gc/collection"
