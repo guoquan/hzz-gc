@@ -4,7 +4,7 @@
     "heapSize": "HEAP_SIZE",
     "totalObjects": "TOTAL_OBJECTS",
     "edenSpace": "EDEN_SPACE",
-    "welcome": "Welcome to the Junkyard",
+    "welcome": "Welcome to the Heap",
     "slogan": "Not clearing memory, but recycling inspiration.",
     "systemOut": "System.out.println(\"Please deposit your garbage by 12:00 PM.\");",
     "submit": "Dump It Here",
