@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -31,7 +31,7 @@ export default async function RootLayout({
   params: Promise<{locale: string}>;
 }) {
   const { locale } = await params;
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const messages = await getMessages({locale});
 
   return (
