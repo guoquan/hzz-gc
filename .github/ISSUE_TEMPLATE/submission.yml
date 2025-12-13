@@ -1,0 +1,57 @@
+name: 🗑️ 投放小垃圾 (Garbage Submission)
+description: 把你的“小垃圾”扔进 HZZ-GC 堆里。
+title: "[Submission]: "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢投放！请填写以下信息，我们的 Minor GC 机器人会在每天中午自动回收。
+  
+  - type: input
+    id: title
+    attributes:
+      label: 项目名称 (Title)
+      description: 给你的小垃圾起个响亮的名字。
+      placeholder: e.g. 摸鱼神器 v0.1
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: 作者 (Author)
+      description: 你的 ID 或昵称。
+      placeholder: e.g. HZZ_User
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 简介 (Description)
+      description: 简要介绍它能干什么（或者不能干什么）。
+      placeholder: 这是一个能自动生成日报的脚本...
+    validations:
+      required: true
+
+  - type: input
+    id: repo
+    attributes:
+      label: 代码仓库 (Repository URL)
+      description: GitHub, GitLab, etc.
+      placeholder: https://github.com/yourname/project
+
+  - type: input
+    id: demo
+    attributes:
+      label: 演示/链接 (Demo/Visit URL)
+      description: 在线演示地址，或者是下载链接。
+      placeholder: https://your-project.vercel.app
+
+  - type: input
+    id: tags
+    attributes:
+      label: 标签 (Tags)
+      description: 用逗号分隔。
+      placeholder: ai, tool, python, useless

@@ -1,0 +1,48 @@
+name: 🧹 Minor GC (Daily Collection)
+
+on:
+  schedule:
+    # Runs at 04:00 UTC (12:00 Beijing Time) every day
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  collect-garbage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Heap
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Collector Script
+        id: collector
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/minor-gc.mjs
+
+      - name: Create Pull Request
+        if: steps.collector.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: minor gc collection [skip ci]"
+          title: "🧹 Minor GC Report: ${{(new Date()).toISOString().split('T')[0]}}"
+          body: |
+            Daily Garbage Collection Report.
+            
+            Collected the following issues:
+            Closes #${{ join(split(steps.collector.outputs.processed_issues, ','), ', Closes #') }}
+            
+            Please review the new garbage and merge if acceptable.
+          branch: "minor-gc/collection"
+          base: main
+          delete-branch: true

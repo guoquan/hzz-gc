@@ -59,9 +59,14 @@ export default function Home() {
             <span className="font-mono text-sm text-gray-400">{t('systemOut')}</span>
           </p>
           <div className="flex justify-center space-x-4">
-             <button className="bg-gray-900 text-white px-6 py-2 rounded-md font-medium hover:bg-gray-800 transition">
+             <a 
+               href="https://github.com/guoquan/hzz-gc/issues/new?template=submission.yml" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="bg-gray-900 text-white px-6 py-2 rounded-md font-medium hover:bg-gray-800 transition flex items-center"
+             >
                {t('submit')}
-             </button>
+             </a>
              <Link href={`/${locale}/manifesto`} className="bg-white border border-gray-300 text-gray-700 px-6 py-2 rounded-md font-medium hover:bg-gray-50 transition flex items-center">
                {t('manifesto')}
              </Link>
