@@ -61,9 +61,6 @@ export const GarbageCard: React.FC<GarbageCardProps> = ({ item }) => {
             </a>
           )}
         </div>
-        <div className="text-xs text-gray-500 font-mono shrink-0 ml-2">
-          {t('refs')}: {item.reference_count}
-        </div>
       </div>
     </div>
   );
