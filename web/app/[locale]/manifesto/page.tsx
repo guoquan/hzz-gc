@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import LanguageSwitcher from '../../../../components/LanguageSwitcher';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
