@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'zh'}];
-}
-
 export const metadata: Metadata = {
   title: "HZZ-GC | The Junkyard",
   description: "Not clearing memory, but recycling inspiration. HZZ Garbage Collection system.",
 };
+
+export function generateStaticParams() {
+  return [{locale: 'en'}, {locale: 'zh'}];
+}
 
 export default async function RootLayout({
   children,
@@ -31,7 +31,8 @@ export default async function RootLayout({
   params: Promise<{locale: string}>;
 }) {
   const { locale } = await params;
-  const messages = await getMessages();
+  unstable_setRequestLocale(locale);
+  const messages = await getMessages({locale});
 
   return (
     <html lang={locale}>
