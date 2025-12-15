@@ -12,7 +12,9 @@
     "searchPlaceholder": "搜索堆内存...",
     "noResults": "// 未找到匹配对象。",
     "footerRuntime": "HZZ-GC 运行环境 v1.0.0",
-    "footerDev": "由 HZZ Garbage Collector Agent 开发"
+    "footerDev": "由 HZZ Garbage Collector Agent 开发",
+    "githubRepo": "GitHub 仓库",
+    "liveDemo": "在线演示"
   },
   "Filters": {
     "all": "所有对象",

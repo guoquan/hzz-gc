@@ -12,7 +12,9 @@
     "searchPlaceholder": "Search heap...",
     "noResults": "// No objects found matching criteria.",
     "footerRuntime": "HZZ-GC Runtime Environment v1.0.0",
-    "footerDev": "Developed by HZZ Garbage Collector Agent"
+    "footerDev": "Developed by HZZ Garbage Collector Agent",
+    "githubRepo": "GitHub Repo",
+    "liveDemo": "Live Demo"
   },
   "Filters": {
     "all": "All Objects",

@@ -71,6 +71,29 @@ export default function Home() {
                {t('manifesto')}
              </Link>
           </div>
+
+          <div className="flex justify-center mt-6 space-x-4">
+            <a href="https://github.com/guoquan/hzz-gc" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 flex items-center space-x-1">
+              <span className="text-xl">🐙</span>
+              <span>{t('githubRepo')}</span>
+            </a>
+            <a href="https://guoquan.github.io/hzz-gc/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 flex items-center space-x-1">
+              <span className="text-xl">🚀</span>
+              <span>{t('liveDemo')}</span>
+            </a>
+          </div>
+
+          <div className="flex justify-center mt-4 space-x-2 flex-wrap">
+            <a href="https://github.com/guoquan/hzz-gc/actions/workflows/deploy.yml" target="_blank" rel="noopener noreferrer">
+              <img alt="GitHub Actions workflow status" src="https://img.shields.io/github/actions/workflow/status/guoquan/hzz-gc/deploy.yml?branch=main&style=flat-square">
+            </a>
+            <a href="https://github.com/guoquan/hzz-gc/stargazers" target="_blank" rel="noopener noreferrer">
+              <img alt="GitHub Stars" src="https://img.shields.io/github/stars/guoquan/hzz-gc?style=flat-square">
+            </a>
+            <a href="https://github.com/guoquan/hzz-gc/commits/main" target="_blank" rel="noopener noreferrer">
+              <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/guoquan/hzz-gc/main?style=flat-square">
+            </a>
+          </div>
         </section>
 
         {/* Controls */}

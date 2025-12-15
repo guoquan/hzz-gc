@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HZZ-GC | The Junkyard",
+  title: "HZZ-GC | The Heap",
   description: "Not clearing memory, but recycling inspiration. HZZ Garbage Collection system.",
 };
 
