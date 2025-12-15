@@ -1,5 +1,9 @@
 # HZZ-GC
 
+[![GitHub Actions workflow status](https://img.shields.io/github/actions/workflow/status/guoquan/hzz-gc/deploy.yml?branch=main&style=for-the-badge)](https://github.com/guoquan/hzz-gc/actions/workflows/deploy.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/guoquan/hzz-gc?style=for-the-badge)](https://github.com/guoquan/hzz-gc/stargazers)
+[![GitHub last commit](https://img.shields.io/github/last-commit/guoquan/hzz-gc/main?style=for-the-badge)](https://github.com/guoquan/hzz-gc/commits/main)
+
 > **HZZ Garbage Collection (from Group Chat)**
 >
 > *Not clearing memory, but recycling inspiration.*
