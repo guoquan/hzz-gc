@@ -32,5 +32,4 @@ jobs:
           # This should match the baseURL in playwright.config.ts
           BASE_URL: http://localhost:3000
 
-      - name: Build Next.js Application
-        run: npm run build
+
