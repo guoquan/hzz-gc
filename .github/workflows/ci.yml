@@ -33,12 +33,12 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Start Next.js Server
-        run: npm start & # Use npm start to run HOSTNAME=0.0.0.0 node .next/standalone/server.js
+        run: nohup npm start & # Use npm start to run HOSTNAME=0.0.0.0 node .next/standalone/server.js
         working-directory: ./web
 
       - name: Wait for Server to be Ready
         # wait for 60 seconds for server to start up
-        timeout-minutes: 1
+        timeout-minutes: 2 # Increased timeout
         run: |
           for i in `seq 1 60`; do
             nc -z 127.0.0.1 3000 && echo "✅ Server is up!" && exit 0
