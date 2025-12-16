@@ -17,9 +17,4 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  webServer: {
-    command: '', // Server will be started manually in CI
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-  },
 });
