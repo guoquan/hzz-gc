@@ -57,5 +57,19 @@ export const MOCK_GARBAGE: Garbage[] = [
     updated_at: new Date().toISOString(),
     reference_count: 100, // It's the best!
     status: GarbageStatus.TENURED, 
+  },
+  {
+    id: 'obj-0x00A',
+    title: 'PrivyPlay',
+    author: '小海',
+    description: 'PrivyPlay 是一款定位于 NAS/自建玩家的 Web 端无损音乐服务，以 Docker 部署的方式提供简洁可控的远程播放体验。应用通过读取宿主机挂载的目标目录，将其中的音频与封面元数据映射到数据库，供浏览、播放与列表管理使用，同时保证对源文件的只读访问。',
+    links: {
+      repo: 'https://github.com/NMTuan/PrivyPlay',
+    },
+    tags: ['nas', 'music', 'docker', 'web', 'self-hosted'],
+    created_at: '2025-12-16T13:48:00Z',
+    updated_at: '2025-12-16T13:48:00Z',
+    reference_count: 0,
+    status: GarbageStatus.NEW,
   }
 ];
