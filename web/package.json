@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js",
     "lint": "eslint",
-    "test-e2e": "start-server-and-test --wait-on-timeout 600000 \"HOSTNAME=0.0.0.0 node .next/standalone/server.js\" http://127.0.0.1:3000 \"npx playwright test\""
+    "test-e2e": "start-server-and-test --wait-on-timeout 600000 \"sh -c 'HOSTNAME=0.0.0.0 node .next/standalone/server.js'\" http://127.0.0.1:3000 \"npx playwright test\""
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
