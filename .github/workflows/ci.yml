@@ -24,7 +24,10 @@ jobs:
           cache-dependency-path: web/package-lock.json
 
       - name: Install Dependencies
-        run: npm install # Use npm ci for clean install in CI
+        run: npm install
+
+      - name: Build Next.js Application
+        run: npm run build
 
       - name: Run Playwright Tests
         run: npx playwright test
