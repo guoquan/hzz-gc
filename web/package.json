@@ -9,7 +9,7 @@
     "lint": "eslint",
     "test-server": "npm run start",
     "test-playwright": "npx playwright test",
-    "test-e2e": "start-server-and-test --wait-on-timeout 600000 \"npm run test-server\" \"http://127.0.0.1:3000\" \"npm run test-playwright\""
+    "test-e2e": "start-server-and-test \"npm run test-server\" \"http://127.0.0.1:3000\" \"npm run test-playwright\""
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
