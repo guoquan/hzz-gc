@@ -29,6 +29,13 @@ jobs:
       - name: Build Next.js Application
         run: npm run build
 
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Start Next.js Server
+        run: node .next/standalone/server.js &
+        working-directory: ./web # Ensure this is run from the web directory
+
       - name: Run Playwright Tests
         run: npx playwright test
         env:

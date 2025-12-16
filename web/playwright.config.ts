@@ -18,9 +18,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'node .next/standalone/server.js',
+    command: '', // Server will be started manually in CI
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
-    timeout: 360 * 1000,
   },
 });
