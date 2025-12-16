@@ -32,8 +32,25 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Start Next.js Server
+        run: npm start & # Use npm start to run HOSTNAME=0.0.0.0 node .next/standalone/server.js
+        working-directory: ./web
+
+      - name: Wait for Server to be Ready
+        # wait for 60 seconds for server to start up
+        timeout-minutes: 1
+        run: |
+          for i in `seq 1 60`; do
+            nc -z 127.0.0.1 3000 && echo "✅ Server is up!" && exit 0
+            echo "Waiting for server to start... ($i/60)"
+            sleep 1
+          done
+          echo "❌ Server did not start in time!"
+          exit 1
+        working-directory: ./web
+
       - name: Run Playwright Tests
-        run: npm run test-e2e
+        run: npx playwright test
         env:
           # This should match the baseURL in playwright.config.ts
           BASE_URL: http://localhost:3000
