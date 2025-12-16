@@ -23,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
+    "serve": "^14.2.3",
     "start-server-and-test": "^2.0.3",
     "tailwindcss": "^4",
     "typescript": "^5"
