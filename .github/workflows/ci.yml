@@ -1,0 +1,39 @@
+name: 🧪 CI (Continuous Integration)
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./web 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: 'npm'
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install Dependencies
+        run: npm ci # Use npm ci for clean install in CI
+
+      - name: Run Playwright Tests
+        run: npx playwright test
+        env:
+          # This should match the baseURL in playwright.config.ts
+          BASE_URL: http://localhost:3000
+
+      - name: Build Next.js Application
+        run: npm run build
+        env:
+          # This is needed if next.config.ts has GITHUB_ACTIONS logic for build
+          GITHUB_ACTIONS: true 
