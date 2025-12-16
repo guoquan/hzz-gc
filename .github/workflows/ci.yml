@@ -34,6 +34,3 @@ jobs:
 
       - name: Build Next.js Application
         run: npm run build
-        env:
-          # This is needed if next.config.ts has GITHUB_ACTIONS logic for build
-          GITHUB_ACTIONS: true 
