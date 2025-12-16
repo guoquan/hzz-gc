@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "node .next/standalone/server.js",
+    "lint": "eslint",
+    "test-e2e": "start-server-and-test start http://localhost:3000 \"npx playwright test\""
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
@@ -23,6 +24,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
+    "start-server-and-test": "^2.0.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
