@@ -24,7 +24,7 @@ jobs:
           cache-dependency-path: web/package-lock.json
 
       - name: Install Dependencies
-        run: npm ci # Use npm ci for clean install in CI
+        run: npm install # Use npm ci for clean install in CI
 
       - name: Run Playwright Tests
         run: npx playwright test
