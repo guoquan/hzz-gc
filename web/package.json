@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node .next/standalone/server.js",
-    "lint": "eslint",
+    "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js",
+    "lint": "eslint",,
     "test-e2e": "start-server-and-test start http://localhost:3000 \"npx playwright test\""
   },
   "dependencies": {
