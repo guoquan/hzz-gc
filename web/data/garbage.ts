@@ -57,5 +57,19 @@ export const MOCK_GARBAGE: Garbage[] = [
     updated_at: new Date().toISOString(),
     reference_count: 100, // It's the best!
     status: GarbageStatus.TENURED, 
+  },
+  {
+    id: 'obj-0x00A',
+    title: '音乐播放器',
+    author: '🍊range',
+    description: '音乐播放器',
+    links: {
+      demo: 'https://www.lingguang.com/share/FLASH_APP-a793a4c9-d0eb-4336-bab7-f133606a6c9b66',
+    },
+    tags: ['music', 'player', 'web-app'],
+    created_at: '2025-12-16T13:48:00Z',
+    updated_at: '2025-12-16T13:48:00Z',
+    reference_count: 1,
+    status: GarbageStatus.NEW,
   }
 ];
