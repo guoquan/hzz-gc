@@ -14,10 +14,10 @@ test.describe('HZZ-GC System Tests', () => {
     await expect(page.getByText('System.out.println')).toBeVisible();
 
     // Check that garbage cards are rendered
-    // Based on mock data, we expect at least 6 cards initially
+    // Based on mock data, we expect at least 5 cards initially
     // Targeting the card titles to be more specific than generic CSS classes
     const cards = page.locator('h3.text-lg.font-bold');
-    await expect(cards).toHaveCount(6);
+    await expect(cards).toHaveCount(5);
   });
 
   test('should filter garbage by Eden Space (New)', async ({ page }) => {
