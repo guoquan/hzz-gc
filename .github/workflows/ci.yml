@@ -36,12 +36,6 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright Tests
-        run: npx start-server-and-test --wait-on-timeout 600000 "npm run start-static" "http://127.0.0.1:3000/hzz-gc/en" "npx playwright test"
-
-      - name: Run Playwright Tests
-        run: npx playwright test
-        env:
-          # This should match the baseURL in playwright.config.ts
-          BASE_URL: http://localhost:3000
+        run: npm run test-e2e
 
 
