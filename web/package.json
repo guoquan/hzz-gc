@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js",
     "lint": "eslint",
-    "start-static": "npx serve out -l 3000",
-    "test-server": "npm run start",
+    "start-static": "npx serve out -l 3000"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
