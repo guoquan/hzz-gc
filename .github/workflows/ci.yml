@@ -24,7 +24,10 @@ jobs:
           cache-dependency-path: web/package-lock.json
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install serve # Ensure serve is available for npx
+
 
       - name: Build Next.js Application
         run: npm run build
