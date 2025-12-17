@@ -46,7 +46,7 @@ jobs:
         timeout-minutes: 1
         run: |
           for i in `seq 1 60`; do
-            curl -f http://127.0.0.1:3000/en && echo "✅ Static Server is up and responding!" && exit 0
+            curl -f --max-time 5 --retry 5 --retry-delay 1 http://127.0.0.1:3000/en && echo "✅ Static Server is up and responding!" && exit 0
             echo "Waiting for static server to respond HTTP 200... ($i/60)"
             sleep 1
           done
