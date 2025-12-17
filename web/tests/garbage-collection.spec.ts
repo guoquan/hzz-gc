@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('HZZ-GC System Tests', () => {
   
   test('should load the Heap (Homepage) correctly', async ({ page }) => {
-    await page.goto('/hzz-gc/en');
+    await page.goto('/en');
     
     // Check Title
     await expect(page).toHaveTitle(/HZZ-GC/);
@@ -21,7 +21,7 @@ test.describe('HZZ-GC System Tests', () => {
   });
 
   test('should filter garbage by Eden Space (New)', async ({ page }) => {
-    await page.goto('/hzz-gc/en');
+    await page.goto('/en');
     
     // Click "Eden Space" filter
     await page.getByRole('button', { name: 'Eden Space' }).click();
@@ -34,7 +34,7 @@ test.describe('HZZ-GC System Tests', () => {
   });
 
   test('should search and find specific garbage', async ({ page }) => {
-    await page.goto('/hzz-gc/en');
+    await page.goto('/en');
     
     // Type into search box
     await page.getByPlaceholder('Search heap...').fill('Cat');
@@ -47,7 +47,7 @@ test.describe('HZZ-GC System Tests', () => {
   });
 
   test('should navigate to Manifesto and back', async ({ page }) => {
-    await page.goto('/hzz-gc/en');
+    await page.goto('/en');
     
     // Click "View Manifesto"
     await page.getByRole('link', { name: 'View Manifesto' }).click();

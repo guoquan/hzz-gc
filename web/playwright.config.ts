@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'list',
   use: {
-    baseURL: 'http://localhost:3000/hzz-gc', // Playwright will wait for this URL
+    baseURL: 'http://localhost:3000', // Playwright will wait for this URL
     trace: 'on-first-retry',
   },
   projects: [

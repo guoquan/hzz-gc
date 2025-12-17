@@ -36,7 +36,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Serve Static Files
-        run: npx serve out/hzz-gc -l 3000 & # Start static server in background from correct basePath directory
+        run: npx serve out -l 3000 & # Start static server in background
         working-directory: ./web
 
       - name: Wait for Server to be Ready
