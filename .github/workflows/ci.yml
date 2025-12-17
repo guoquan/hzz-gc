@@ -32,11 +32,15 @@ jobs:
           # Force static export mode for CI testing
           NEXT_BUILD_MODE: 'static-export' 
 
+      - name: Verify build output
+        run: ls -al out
+        working-directory: ./web
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
       - name: Serve Static Files
-        run: npx serve -s out -l tcp://0.0.0.0:3000 & # Start static server in background
+        run: npx serve out -l 3000 & # Start static server in background
         working-directory: ./web
 
       - name: Wait for Server to be Ready
@@ -44,7 +48,7 @@ jobs:
         timeout-minutes: 1
         run: |
           for i in `seq 1 60`; do
-            curl -f http://127.0.0.1:3000/hzz-gc/en && echo "✅ Static Server is up and responding!" && exit 0
+            curl -f --max-time 5 http://127.0.0.1:3000/hzz-gc/en && echo "✅ Static Server is up and responding!" && exit 0
             echo "Waiting for static server to respond HTTP 200... ($i/60)"
             sleep 1
           done
