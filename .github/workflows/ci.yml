@@ -35,7 +35,22 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Serve Static Files
+        run: npx serve out/hzz-gc -l 3000 & # Start static server in background from correct basePath directory
+        working-directory: ./web
+
+      - name: Wait for Server to be Ready
+        # wait for 60 seconds for server to start up and respond HTTP 200
+        timeout-minutes: 1
+        run: |
+          for i in `seq 1 60`; do
+            curl -f http://127.0.0.1:3000/en && echo "✅ Static Server is up and responding!" && exit 0
+            echo "Waiting for static server to respond HTTP 200... ($i/60)"
+            sleep 1
+          done
+          echo "❌ Static Server did not respond HTTP 200 in time!"
+          exit 1
+        working-directory: ./web
+
       - name: Run Playwright Tests
-        run: npm run test-e2e
-
-
+        run: npx playwright test
