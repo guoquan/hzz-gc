@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
-export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'zh'}];
-}
+// export function generateStaticParams() {
+//   return [{locale: 'en'}, {locale: 'zh'}];
+// }
 
 export default async function Manifesto({params}: {params: Promise<{locale: string}>}) {
   const { locale } = await params;
