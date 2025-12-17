@@ -10,7 +10,7 @@ const repoName = 'hzz-gc';
 
 const nextConfig: NextConfig = {
   output: nextBuildMode === 'static-export' ? 'export' : 'standalone',
-  basePath: isGithubActions ? `/${repoName}` : '',
+  basePath: nextBuildMode === 'static-export' ? '' : isGithubActions ? `/${repoName}` : '',
   images: {
     unoptimized: isGithubActions ? true : false, // Required for static export (GH Pages)
   }
