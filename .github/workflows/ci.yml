@@ -24,14 +24,17 @@ jobs:
           cache: 'npm'
           cache-dependency-path: web/package-lock.json
 
+      - name: Build Next.js Application
+        run: npm run build
+        env:
+          # Force static export mode for CI testing
+          NEXT_BUILD_MODE: 'static-export' 
+
+      - name: List 'out' directory contents
+        run: ls -R out
+        working-directory: ./web
+
       - name: Cache Playwright Browsers
-        id: playwright-cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('web/package.json') }} # Use package.json for cache key
-          restore-keys: |
-            ${{ runner.os }}-playwright-
 
       - name: Install Playwright Browsers
         if: steps.playwright-cache.outputs.cache-hit != 'true' # Only install if cache not hit
