@@ -29,11 +29,13 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('web/package-lock.json') }}
+          key: ${{ runner.os }}-playwright-${{ hashFiles('web/package.json') }} # Use package.json for cache key
           restore-keys: |
             ${{ runner.os }}-playwright-
 
       - name: Install Playwright Browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true' # Only install if cache not hit
+        run: npx playwright install chromium
 
       - name: Serve Static Files
         run: npm run start-static & # Start static server in background
