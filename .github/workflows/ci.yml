@@ -34,6 +34,11 @@ jobs:
         run: rm -rf web/app/[locale]/manifesto
         
       - name: Build Next.js Application 
+        run: npx next build
+        env:
+          # Force static export mode for CI testing
+          NEXT_BUILD_MODE: 'static-export' 
+
 
       - name: List 'out' directory contents
         run: ls -R out
