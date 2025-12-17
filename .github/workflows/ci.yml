@@ -24,20 +24,16 @@ jobs:
           cache: 'npm'
           cache-dependency-path: web/package-lock.json
 
-      - name: Install Dependencies
-        run: |
-          npm install
-          npm install serve # Ensure serve is available for npx
-
-
-      - name: Build Next.js Application
-        run: npm run build
-        env:
-          # Force static export mode for CI testing
-          NEXT_BUILD_MODE: 'static-export' 
+      - name: Cache Playwright Browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('web/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
 
       - name: Install Playwright Browsers
-        run: npx playwright install chromium
 
       - name: Serve Static Files
         run: npm run start-static & # Start static server in background
