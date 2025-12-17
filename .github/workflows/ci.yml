@@ -9,6 +9,7 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10 # Increase job timeout
     defaults:
       run:
         working-directory: ./web 
@@ -36,7 +37,7 @@ jobs:
           NEXT_BUILD_MODE: 'static-export' 
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install chromium
 
       - name: Serve Static Files
         run: npm run start-static & # Start static server in background
