@@ -25,7 +25,7 @@ jobs:
           cache-dependency-path: web/package-lock.json
 
       - name: Build Next.js Application
-        run: npm run build
+        run: npx next build
         env:
           # Force static export mode for CI testing
           NEXT_BUILD_MODE: 'static-export' 
