@@ -18,10 +18,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npx serve out -l 3000', // Command to serve static files
+    command: 'cd web && npx serve out -l 3000', // Command to serve static files
     url: 'http://localhost:3000/hzz-gc/en', // Playwright will wait for this specific URL
     timeout: 360 * 1000, // 6 minutes for serve to start and respond
     reuseExistingServer: !process.env.CI,
-    workingDirectory: './web', // Serve from the web directory
   },
 });
