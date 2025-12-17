@@ -1,15 +1,18 @@
+"use client";
+
 import Link from 'next/link';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { useTranslations } from 'next-intl'; // Use useTranslations for client components
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
+// generateStaticParams should not be used in client components for static export
 // export function generateStaticParams() {
 //   return [{locale: 'en'}, {locale: 'zh'}];
 // }
 
-export default async function Manifesto({params}: {params: Promise<{locale: string}>}) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations({locale, namespace: 'Manifesto'});
+export default function Manifesto({ params }: { params: { locale: string } }) { // Remove async from here
+  const { locale } = params;
+  // setRequestLocale(locale); // setRequestLocale is for server components
+  const t = useTranslations('Manifesto');
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans p-8 md:p-12">
