@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js",
     "lint": "eslint",
-    "start-static": "http-server out -a 0.0.0.0 -p 3000",
+    "start-static": "npx serve out -l 3000",
     "test-e2e": "start-server-and-test start-static http://127.0.0.1:3000/hzz-gc/en \"npx playwright test\""
   },
   "dependencies": {
@@ -25,7 +25,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
-    "http-server": "^14.1.1",
+    "serve": "^14.2.3",
     "start-server-and-test": "^2.0.3",
     "tailwindcss": "^4",
     "typescript": "^5"

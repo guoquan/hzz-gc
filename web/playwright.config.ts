@@ -19,9 +19,10 @@ export default defineConfig({
   ],
   webServer: {
     command: 'npx serve out -l 3000', // Command to serve static files
-    url: 'http://localhost:3000/hzz-gc/en', // Playwright will wait for this specific URL
-    timeout: 360 * 1000, // 6 minutes for serve to start and respond
-    reuseExistingServer: !process.env.CI,
-    // workingDirectory: './web', // Serve from the web directory
+    url: 'http://localhost:3000', // The URL the server should be listening on
+    reuseExistingServer: !process.env.CI, // Don't reuse server in CI environments
+    timeout: 120 * 1000, // Give the server up to 120 seconds to start
+    stdout: 'pipe', // Pipe server output to Playwright's console
+    stderr: 'pipe', // Pipe server error output
   },
 });
