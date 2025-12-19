@@ -6,8 +6,8 @@ export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
 }
 
-export default async function Manifesto({params}: {params: {locale: string}}) {
-  const { locale } = params;
+export default async function Manifesto({params}: {params: Promise<{locale: string}>}) {
+  const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({locale, namespace: 'Manifesto'});
 
@@ -35,6 +35,9 @@ export default async function Manifesto({params}: {params: {locale: string}}) {
         </header>
 
         <article className="prose prose-lg prose-green max-w-none">
+          <h3>{t('overviewTitle')}</h3>
+          <p>{t('overviewText')}</p>
+
           <h3>{t('conceptsTitle')}</h3>
           <p>{t('conceptsIntro')}</p>
           <ul className="list-disc pl-5 space-y-2">
