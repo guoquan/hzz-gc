@@ -35,6 +35,9 @@ export default async function Manifesto({params}: {params: Promise<{locale: stri
         </header>
 
         <article className="prose prose-lg prose-green max-w-none">
+          <h3>{t('overviewTitle')}</h3>
+          <p>{t('overviewText')}</p>
+
           <h3>{t('conceptsTitle')}</h3>
           <p>{t('conceptsIntro')}</p>
           <ul className="list-disc pl-5 space-y-2">
