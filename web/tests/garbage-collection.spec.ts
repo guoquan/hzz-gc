@@ -17,6 +17,9 @@ test.describe('HZZ-GC System Tests', () => {
     // Based on current mock data, we expect 4 items
     const cards = page.locator('h3.text-lg.font-bold');
     await expect(cards).toHaveCount(4);
+    
+    // Take screenshot of Homepage
+    await page.screenshot({ path: 'test-results/screenshots/01-homepage.png', fullPage: true });
   });
 
   test('should filter garbage by Eden Space (New)', async ({ page }) => {
@@ -30,6 +33,9 @@ test.describe('HZZ-GC System Tests', () => {
     
     // "GT4T AI Box" (TENURED) should NOT be visible
     await expect(page.getByText('GT4T AI Box')).not.toBeVisible();
+
+    // Take screenshot of Filtered View
+    await page.screenshot({ path: 'test-results/screenshots/02-filtered-eden.png' });
   });
 
   test('should search and find specific garbage', async ({ page }) => {
@@ -43,6 +49,9 @@ test.describe('HZZ-GC System Tests', () => {
     
     // Should NOT find "Exifilm"
     await expect(page.getByText('Exifilm')).not.toBeVisible();
+
+    // Take screenshot of Search Results
+    await page.screenshot({ path: 'test-results/screenshots/03-search-results.png' });
   });
 
   test('should navigate to Manifesto and back', async ({ page }) => {
@@ -57,6 +66,9 @@ test.describe('HZZ-GC System Tests', () => {
     // Verify Content
     await expect(page.getByText('Overview', { exact: false })).toBeVisible();
     await expect(page.getByText('tech enthusiasts', { exact: false })).toBeVisible();
+
+    // Take screenshot of Manifesto
+    await page.screenshot({ path: 'test-results/screenshots/04-manifesto.png', fullPage: true });
     
     // Go back
     await page.getByRole('link', { name: 'Return to Heap' }).click();
