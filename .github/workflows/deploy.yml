@@ -55,7 +55,7 @@ jobs:
         run: npm run build
         env:
           NEXT_BUILD_MODE: 'static-export'
-          GITHUB_ACTIONS: true 
+          ENABLE_BASE_PATH: 'true' 
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
