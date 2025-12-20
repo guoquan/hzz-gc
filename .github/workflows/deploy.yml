@@ -54,7 +54,7 @@ jobs:
       - name: Build with Next.js
         run: npm run build
         env:
-          # This triggers our logic in next.config.ts
+          NEXT_BUILD_MODE: 'static-export'
           GITHUB_ACTIONS: true 
 
       - name: Upload artifact
