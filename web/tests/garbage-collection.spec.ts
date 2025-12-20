@@ -14,9 +14,9 @@ test.describe('HZZ-GC System Tests', () => {
     await expect(page.getByText('System.out.println')).toBeVisible();
 
     // Check that garbage cards are rendered
-    // Based on current mock data, we expect 4 items
+    // Based on current mock data, we expect 5 items (including PrivyPlay)
     const cards = page.locator('h3.text-lg.font-bold');
-    await expect(cards).toHaveCount(4);
+    await expect(cards).toHaveCount(5);
     
     // Take screenshot of Homepage
     await page.screenshot({ path: 'test-results/screenshots/01-homepage.png', fullPage: true });
