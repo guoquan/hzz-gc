@@ -86,5 +86,20 @@ export const MOCK_GARBAGE: Garbage[] = [
     updated_at: '2025-12-16T13:48:00Z',
     reference_count: 1,
     status: GarbageStatus.NEW,
+  },
+  {
+    id: 'obj-0x00C',
+    title: 'Flow Engine',
+    author: 'guoquan',
+    description: 'A high-performance, lightweight web-based digital human engine powered by WebGPU and Three.js. 一个基于 WebGPU 和 Three.js 的高性能、轻量级 Web 数字人引擎，支持在 Web 应用中集成逼真的 AI 数字人。',
+    links: {
+      repo: 'https://github.com/guoquan/flow-engine',
+      demo: 'http://guoquan.net/flow-engine/',
+    },
+    tags: ['ai', 'digital-human', 'webgpu', 'threejs', 'frontend', 'avatar'],
+    created_at: '2025-12-30T10:00:00Z',
+    updated_at: '2025-12-30T10:00:00Z',
+    reference_count: 0,
+    status: GarbageStatus.NEW,
   }
 ];
