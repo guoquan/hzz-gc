@@ -105,14 +105,14 @@ export const MOCK_GARBAGE: Garbage[] = [
   {
     id: 'obj-0x00D',
     title: 'Wool-Ball-Battle',
-    author: 'Freesisx',
+    author: 'freesisx',
     description: '一个可爱的像素风格互动网页游戏，用鼠标或手势控制毛线球，吸引猫咪追逐！A charming pixel-art interactive web game where you control a wool ball with your mouse or gestures to attract cats!',
     links: {
       repo: 'https://github.com/freesisx/Wool-Ball-Battle',
     },
     tags: ['game', 'pixel-art', 'interactive', 'web', 'javascript', 'canvas', 'cute'],
-    created_at: '2026-01-12T04:30:00Z',
-    updated_at: '2026-01-12T04:30:00Z',
+    created_at: '2025-12-31T10:00:00Z',
+    updated_at: '2025-12-31T10:00:00Z',
     reference_count: 42,
     status: GarbageStatus.TENURED,
   }
